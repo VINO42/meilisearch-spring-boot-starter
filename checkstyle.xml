@@ -30,10 +30,10 @@
         </module>-->
     <!-- 长度检查 -->
     <!-- 每行不超过120个字符 -->
-<!--    <module name="LineLength">
-        <property name="fileExtensions" value="java"/>
-        <property name="max" value="1200"/>
-    </module>-->
+    <!--    <module name="LineLength">
+            <property name="fileExtensions" value="java"/>
+            <property name="max" value="1200"/>
+        </module>-->
     <!-- 每个java文件一个语法树 -->
     <module name="TreeWalker">
         <!-- 禁止使用System.out.println -->
