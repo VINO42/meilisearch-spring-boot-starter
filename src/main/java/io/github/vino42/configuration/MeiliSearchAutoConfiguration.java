@@ -11,7 +11,10 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
+
+import static io.github.vino42.support.Constant.BeanName.DEFAULT_MEILISEARCH_CLIENT_BEAN_NAME;
 
 /**
  * =====================================================================================
@@ -28,14 +31,13 @@ import org.springframework.context.annotation.Primary;
 @EnableConfigurationProperties(MeiliSearchProperties.class)
 public class MeiliSearchAutoConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(MeiliSearchAutoConfiguration.class);
-
     @Autowired
     private MeiliSearchProperties meiliSearchClientProperties;
 
-    @Bean
+    @Bean(name = DEFAULT_MEILISEARCH_CLIENT_BEAN_NAME)
     @ConditionalOnMissingBean
     @Primary
-    public Client createClient() {
+    public Client client() {
         LOGGER.debug("start create meilisearch client...");
         Config config =
                 new Config(
@@ -47,6 +49,7 @@ public class MeiliSearchAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
+    @DependsOn(value = {DEFAULT_MEILISEARCH_CLIENT_BEAN_NAME})
     public MeiliSearchService meiliSearchService() {
         return new DefaultMeiliSearchService();
     }
