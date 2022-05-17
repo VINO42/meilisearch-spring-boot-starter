@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @Decription :
  * =====================================================================================
  */
-public class SearchRequestModel implements Serializable {
+public class SearchRequestDTO implements Serializable {
 
     private String index;
 

@@ -1,7 +1,7 @@
 package io.github.vino42.service;
 
-import io.github.vino42.model.SearchRequestModel;
-import io.github.vino42.model.SearchResultModel;
+import io.github.vino42.model.SearchRequestDTO;
+import io.github.vino42.model.SearchResultDTO;
 
 /**
  * =====================================================================================
@@ -16,7 +16,7 @@ import io.github.vino42.model.SearchResultModel;
  */
 public interface MeiliSearchService {
 
-    SearchResultModel query(SearchRequestModel searchRequest) throws Exception;
+    SearchResultDTO query(SearchRequestDTO searchRequest) throws Exception;
 
-    String rawSearch(SearchRequestModel searchRequest) throws Exception;
+    String rawSearch(SearchRequestDTO searchRequest) throws Exception;
 }

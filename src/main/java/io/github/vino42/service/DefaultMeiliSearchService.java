@@ -4,8 +4,8 @@ import cn.hutool.core.util.StrUtil;
 import com.meilisearch.sdk.Client;
 import com.meilisearch.sdk.SearchRequest;
 import com.meilisearch.sdk.model.SearchResult;
-import io.github.vino42.model.SearchRequestModel;
-import io.github.vino42.model.SearchResultModel;
+import io.github.vino42.model.SearchRequestDTO;
+import io.github.vino42.model.SearchResultDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -25,26 +25,26 @@ public class DefaultMeiliSearchService implements MeiliSearchService {
     private Client client;
 
     @Override
-    public SearchResultModel query(SearchRequestModel searchRequestModel) throws Exception {
+    public SearchResultDTO query(SearchRequestDTO searchRequestModel) throws Exception {
         String index = searchRequestModel.getIndex();
         if (StrUtil.isBlankOrUndefined(index)) {
             throw new RuntimeException("index illegal");
         }
         SearchRequest searchRequest = searchRequestModel.getSearchRequest();
-        SearchResultModel searchResultModel = new SearchResultModel();
+        SearchResultDTO searchResultDTO = new SearchResultDTO();
         SearchResult search = client.index(index).search(searchRequest);
-        searchResultModel.setIndex(index);
-        searchResultModel.setSearchResult(search);
-        return searchResultModel;
+        searchResultDTO.setIndex(index);
+        searchResultDTO.setSearchResult(search);
+        return searchResultDTO;
     }
 
     @Override
-    public String rawSearch(SearchRequestModel searchRequestModel) throws Exception {
-        String index = searchRequestModel.getIndex();
+    public String rawSearch(SearchRequestDTO searchRequestDTO) throws Exception {
+        String index = searchRequestDTO.getIndex();
         if (StrUtil.isBlankOrUndefined(index)) {
             throw new RuntimeException("index illegal");
         }
-        SearchRequest searchRequest = searchRequestModel.getSearchRequest();
+        SearchRequest searchRequest = searchRequestDTO.getSearchRequest();
         String searchResult = client.index(index).rawSearch(searchRequest);
         return searchResult;
     }
