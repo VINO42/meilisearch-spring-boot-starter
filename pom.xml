@@ -48,7 +48,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <checkstyle.version>8.36.1</checkstyle.version>
         <hutool.version>5.8.0</hutool.version>
         <melisearch.version>0.7.2</melisearch.version>
