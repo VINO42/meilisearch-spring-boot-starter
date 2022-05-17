@@ -40,9 +40,14 @@ public class SearchRequestDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "SearchRequestModel{" +
-                "index='" + index + '\'' +
-                ", searchRequest=" + JSONUtil.toJsonStr(searchRequest) +
+        return "SearchRequestModel{"
+                +
+                "index='" + index
+                + '\''
+                +
+                ", searchRequest="
+                + JSONUtil.toJsonStr(searchRequest)
+                +
                 '}';
     }
 }

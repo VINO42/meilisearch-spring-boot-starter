@@ -38,9 +38,16 @@ public class MeiliSearchProperties {
 
     @Override
     public String toString() {
-        return "MeiliSearchProperties{" +
-                "hostUrl='" + hostUrl + '\'' +
-                ", apiKey='" + apiKey + '\'' +
+        return "MeiliSearchProperties{"
+                +
+                "hostUrl='"
+                + hostUrl
+                + '\''
+                +
+                ", apiKey='"
+                + apiKey
+                + '\''
+                +
                 '}';
     }
 }
