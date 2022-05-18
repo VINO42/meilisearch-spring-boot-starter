@@ -1,6 +1,5 @@
 package io.github.vino42.model;
 
-import cn.hutool.json.JSONUtil;
 import com.meilisearch.sdk.SearchRequest;
 
 import java.io.Serializable;
@@ -46,7 +45,7 @@ public class SearchRequestDTO implements Serializable {
                 + '\''
                 +
                 ", searchRequest="
-                + JSONUtil.toJsonStr(searchRequest)
+                + searchRequest
                 +
                 '}';
     }
