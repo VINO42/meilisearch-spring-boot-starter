@@ -21,6 +21,8 @@ public class SearchRequestDTO implements Serializable {
 
     private SearchRequest searchRequest;
 
+    private String queryStr;
+
     public void setIndex(String index) {
         this.index = index;
     }
@@ -37,16 +39,20 @@ public class SearchRequestDTO implements Serializable {
         return searchRequest;
     }
 
+    public String getQueryStr() {
+        return queryStr;
+    }
+
+    public void setQueryStr(String queryStr) {
+        this.queryStr = queryStr;
+    }
+
     @Override
     public String toString() {
-        return "SearchRequestModel{"
-                +
-                "index='" + index
-                + '\''
-                +
-                ", searchRequest="
-                + searchRequest
-                +
+        return "SearchRequestDTO{" +
+                "index='" + index + '\'' +
+                ", searchRequest=" + searchRequest +
+                ", queryStr='" + queryStr + '\'' +
                 '}';
     }
 }

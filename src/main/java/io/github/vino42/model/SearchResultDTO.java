@@ -21,6 +21,8 @@ public class SearchResultDTO implements Serializable {
 
     private SearchResult searchResult;
 
+    private String rawSearchStrResult;
+
     public String getIndex() {
         return index;
     }
@@ -37,16 +39,20 @@ public class SearchResultDTO implements Serializable {
         this.searchResult = searchResult;
     }
 
+    public String getRawSearchStrResult() {
+        return rawSearchStrResult;
+    }
+
+    public void setRawSearchStrResult(String rawSearchStrResult) {
+        this.rawSearchStrResult = rawSearchStrResult;
+    }
+
     @Override
     public String toString() {
-        return "SearchResultModel{"
-                +
-                "index='"
-                + index
-                + '\''
-                +
-                ", searchResult=" + searchResult
-                +
+        return "SearchResultDTO{" +
+                "index='" + index + '\'' +
+                ", searchResult=" + searchResult +
+                ", rawSearchStrResult='" + rawSearchStrResult + '\'' +
                 '}';
     }
 }
